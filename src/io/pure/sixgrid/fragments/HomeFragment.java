@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
 import android.view.animation.Animation;
 import android.view.Display;
 import android.view.LayoutInflater;
@@ -16,7 +17,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 
 import io.pure.sixgrid.R;
-import io.pure.sixgrid.drawer.AppsActivity;
+import io.pure.sixgrid.drawer.AppsFragment;
 
 public class HomeFragment extends Fragment
 {
@@ -56,8 +57,8 @@ public class HomeFragment extends Fragment
 			@Override
 			public void onClick(View v)
 			{
-				Intent apps = new Intent(getActivity(), AppsActivity.class);
-				startActivity(apps);
+				ViewPager viewPager = (ViewPager)getActivity().findViewById(R.id.pager);
+				viewPager.setCurrentItem(0, true);
 			}
 		});
 		

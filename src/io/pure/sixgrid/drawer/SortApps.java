@@ -1,9 +1,9 @@
 package io.pure.sixgrid.drawer;
 
 public class SortApps {
-	public void exchange_sort(AppsActivity.Pac[] pacs){
+	public void exchange_sort(AppsFragment.Pac[] pacs){
 		int i, j;
-		AppsActivity.Pac temp;
+		AppsFragment.Pac temp;
 
 		for ( i = 0;  i < pacs.length - 1;  i++ )
 		{

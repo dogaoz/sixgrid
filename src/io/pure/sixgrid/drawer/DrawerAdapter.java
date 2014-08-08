@@ -17,9 +17,9 @@ import io.pure.sixgrid.R;
 
 public class DrawerAdapter extends BaseAdapter{
 	Context mContext;
-	AppsActivity.Pac[] pacsForAdapter;
+	AppsFragment.Pac[] pacsForAdapter;
 
-	public DrawerAdapter (Context c, AppsActivity.Pac pacs[]){
+	public DrawerAdapter (Context c, AppsFragment.Pac pacs[]){
 		mContext = c;
 		pacsForAdapter = pacs;
 	}

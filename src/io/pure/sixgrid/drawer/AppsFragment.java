@@ -1,6 +1,5 @@
 package io.pure.sixgrid.drawer;
 
-import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -9,13 +8,17 @@ import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.GridView;
 
 import io.pure.sixgrid.R;
 
 import java.util.List;
 
-public class AppsActivity extends Activity {
+public class AppsFragment extends Fragment {
 	DrawerAdapter drawerAdapterObject;
 	GridView drawerGrid;
 	class Pac{
@@ -26,22 +29,26 @@ public class AppsActivity extends Activity {
 	Pac[] pacs;
 	PackageManager pm;
 	
+	public AppsFragment()
+	{}
+
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.drawer);
-		drawerGrid = (GridView) findViewById(R.id.appsgrid);
-		pm = getPackageManager();
+	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+	{
+		View rootView = inflater.inflate(R.layout.drawer, container, false);
+		drawerGrid = (GridView)rootView.findViewById(R.id.appsgrid);
+		pm = getActivity().getPackageManager();
 		set_pacs();
-		drawerAdapterObject = new DrawerAdapter(this, pacs);
+		drawerAdapterObject = new DrawerAdapter(getActivity(), pacs);
 		drawerGrid.setAdapter(drawerAdapterObject);
-		drawerGrid.setOnItemClickListener(new DrawerClickListener(this, pacs, pm));
+		drawerGrid.setOnItemClickListener(new DrawerClickListener(getActivity(), pacs, pm));
 		IntentFilter filter = new IntentFilter();
 		filter.addAction(Intent.ACTION_PACKAGE_ADDED);
 		filter.addAction(Intent.ACTION_PACKAGE_REMOVED);
 		filter.addAction(Intent.ACTION_PACKAGE_CHANGED);
 		filter.addDataScheme("package");
-		registerReceiver(new PacReceiver(), filter);
+		getActivity().registerReceiver(new PacReceiver(), filter);
+		return rootView;
 	}
 
 	public void set_pacs(){
