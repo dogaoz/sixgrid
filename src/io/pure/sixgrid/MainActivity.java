@@ -3,11 +3,9 @@ package io.pure.sixgrid;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 
 import io.pure.sixgrid.adapter.SixPagerAdapter;
+import io.pure.sixgrid.preference.CustomizeGrid;
 
 public class MainActivity extends FragmentActivity
 {

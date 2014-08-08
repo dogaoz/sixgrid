@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="Grid One" >
+		
+        <EditTextPreference
+			android:key="nameone"
+			android:title="Name"
+			android:summary="Set the name of the grid." />
+		
+		<ListPreference
+			android:key="pkgnameone"
+			android:title="Package To Launch"
+			android:summary="Select the application to launch." />
+		
+		<net.margaritov.preference.colorpicker.ColorPickerPreference
+			android:key="colorone"
+			android:title="Background Color"
+			android:summary="Set the background colour of Grid." />
+		
+		<net.margaritov.preference.colorpicker.ColorPickerPreference
+			android:key="textcolorone"
+			android:title="Text Color"
+			android:summary="Set the text colour of Grid." />
+		
+    </PreferenceCategory>
+	
+	<PreferenceCategory android:title="Grid Two" >
+
+        <EditTextPreference
+			android:key="nametwo"
+			android:title="Name"
+			android:summary="Set the name of the grid." />
+
+		<ListPreference
+			android:key="pkgnametwo"
+			android:title="Package To Launch"
+			android:summary="Select the application to launch." />
+
+		<net.margaritov.preference.colorpicker.ColorPickerPreference
+			android:key="colortwo"
+			android:title="Background Color"
+			android:summary="Set the background colour of Grid." />
+
+		<net.margaritov.preference.colorpicker.ColorPickerPreference
+			android:key="textcolortwo"
+			android:title="Text Color"
+			android:summary="Set the text colour of Grid." />
+
+    </PreferenceCategory>
+	
+	<PreferenceCategory android:title="Grid Three" >
+
+        <EditTextPreference
+			android:key="namethree"
+			android:title="Name"
+			android:summary="Set the name of the grid." />
+
+		<ListPreference
+			android:key="pkgnamethree"
+			android:title="Package To Launch"
+			android:summary="Select the application to launch." />
+
+		<net.margaritov.preference.colorpicker.ColorPickerPreference
+			android:key="colorthree"
+			android:title="Background Color"
+			android:summary="Set the background colour of Grid." />
+
+		<net.margaritov.preference.colorpicker.ColorPickerPreference
+			android:key="textcolorthree"
+			android:title="Text Color"
+			android:summary="Set the text colour of Grid." />
+
+    </PreferenceCategory>
+	
+	<PreferenceCategory android:title="Grid Four" >
+
+        <EditTextPreference
+			android:key="namefour"
+			android:title="Name"
+			android:summary="Set the name of the grid." />
+
+		<ListPreference
+			android:key="pkgnamefour"
+			android:title="Package To Launch"
+			android:summary="Select the application to launch." />
+
+		<net.margaritov.preference.colorpicker.ColorPickerPreference
+			android:key="colorfour"
+			android:title="Background Color"
+			android:summary="Set the background colour of Grid." />
+
+		<net.margaritov.preference.colorpicker.ColorPickerPreference
+			android:key="textcolorfour"
+			android:title="Text Color"
+			android:summary="Set the text colour of Grid." />
+
+    </PreferenceCategory>
+	
+	<PreferenceCategory android:title="Grid Five" >
+
+        <EditTextPreference
+			android:key="namefive"
+			android:title="Name"
+			android:summary="Set the name of the grid." />
+
+		<ListPreference
+			android:key="pkgnamefive"
+			android:title="Package To Launch"
+			android:summary="Select the application to launch." />
+
+		<net.margaritov.preference.colorpicker.ColorPickerPreference
+			android:key="colorfive"
+			android:title="Background Color"
+			android:summary="Set the background colour of Grid." />
+
+		<net.margaritov.preference.colorpicker.ColorPickerPreference
+			android:key="textcolorfive"
+			android:title="Text Color"
+			android:summary="Set the text colour of Grid." />
+
+    </PreferenceCategory>
+	
+	<PreferenceCategory android:title="Grid Six" >
+
+        <EditTextPreference
+			android:key="namesix"
+			android:title="Name"
+			android:summary="Set the name of the grid." />
+
+		<ListPreference
+			android:key="pkgnamesix"
+			android:title="Package To Launch"
+			android:summary="Select the application to launch." />
+
+		<net.margaritov.preference.colorpicker.ColorPickerPreference
+			android:key="colorsix"
+			android:title="Background Color"
+			android:summary="Set the background colour of Grid." />
+
+		<net.margaritov.preference.colorpicker.ColorPickerPreference
+			android:key="textcolorsix"
+			android:title="Text Color"
+			android:summary="Set the text colour of Grid." />
+
+    </PreferenceCategory>
+	
+</PreferenceScreen>

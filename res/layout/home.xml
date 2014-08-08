@@ -3,7 +3,7 @@
     android:layout_height="match_parent">
 	
 	<Button
-		android:id="@+id/apps"
+		android:id="@+id/one"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content" 
 		android:layout_alignParentLeft="true" 
@@ -11,27 +11,27 @@
 		android:background="#ffffff" />
 	
 	<Button
-		android:id="@+id/messages"
+		android:id="@+id/two"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:layout_alignParentLeft="true" 
-		android:layout_below="@+id/apps"
-		android:text="Messages"
+		android:layout_below="@+id/one"
+		android:text="Messaging"
 		android:textColor="#f5f5f5"
 		android:background="#aa66cc" />
 	
 	<Button
-		android:id="@+id/dialer"
+		android:id="@+id/three"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:layout_alignParentLeft="true"
-		android:layout_below="@+id/messages"
+		android:layout_below="@+id/two"
 		android:text="Dialer"
 		android:textColor="#f5f5f5"
 		android:background="#ffbb33" />
 	
 	<Button
-		android:id="@+id/browser"
+		android:id="@+id/four"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:layout_alignParentRight="true"
@@ -40,21 +40,21 @@
 		android:background="#33b5e5" />
 	
 	<Button
-		android:id="@+id/camera"
+		android:id="@+id/five"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:layout_alignParentRight="true" 
-		android:layout_below="@+id/browser"
+		android:layout_below="@+id/four"
 		android:text="Camera"
 		android:textColor="#f5f5f5"
 		android:background="#99cc00" />
 	
 	<Button
-		android:id="@+id/settings"
+		android:id="@+id/six"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content" 
 		android:layout_alignParentRight="true"
-		android:layout_below="@+id/camera" 
+		android:layout_below="@+id/five" 
 		android:text="Settings"
 		android:textColor="#f5f5f5"
 		android:background="#ff4444" />
