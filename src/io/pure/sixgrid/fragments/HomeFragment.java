@@ -94,8 +94,7 @@ public class HomeFragment extends Fragment
 		mSixParams.width = dispwidth / 2;
 		mSixParams.height = dispheight / 3 - 8;
 		
-		
-		if (mPrefs.getBoolean("applied", false)) {
+		if (mPrefs.getBoolean("applied", true) == false) {
 			mOne.setOnClickListener(new View.OnClickListener() {
 					@Override
 					public void onClick(View v)
@@ -153,7 +152,7 @@ public class HomeFragment extends Fragment
 			}
 		});
 		} else {
-			if (mPrefs.getBoolean("discarded", false)) {
+			if (mPrefs.getBoolean("discarded", false) == false) {
 			 	updateGrids();
 			}
 		}

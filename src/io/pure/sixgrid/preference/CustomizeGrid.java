@@ -74,18 +74,20 @@ public class CustomizeGrid extends PreferenceActivity
 			public void onClick(DialogInterface dinterface, int i)
 			{
 				prefs = getSharedPreferences("io.pure.sixgrid", MODE_PRIVATE);
-				prefs.edit().putBoolean("applied", true);
+				prefs.edit().putBoolean("applied", true).commit();
+				prefs.edit().putBoolean("discarded", false).commit();
 				Intent main = new Intent(CustomizeGrid.this, MainActivity.class);
 				startActivity(main);
 				finish();
 			}
 		});
-		builder.setNegativeButton("Discard", new DialogInterface.OnClickListener() {
+		builder.setNegativeButton("Reset", new DialogInterface.OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dinterface, int i)
 			{
 				prefs = getSharedPreferences("io.pure.sixgrid", MODE_PRIVATE);
-				prefs.edit().putBoolean("discarded", true);
+				prefs.edit().putBoolean("applied", false).commit();
+				prefs.edit().putBoolean("discarded", true).commit();
 				Intent main = new Intent(CustomizeGrid.this, MainActivity.class);
 				startActivity(main);
 				finish();
