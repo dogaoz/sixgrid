@@ -28,6 +28,18 @@
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:layout_margin="26dp"
-		android:text="View License." />
+		android:text="View License."
+		android:textColor="#ffffff"
+		android:background="#666666" />
+	
+	<Button
+		android:id="@+id/custombt"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="26dp"
+		android:layout_marginRight="26dp"
+		android:text="Customise!"
+		android:textColor="#ffffff"
+		android:background="#666666" />
     
 </LinearLayout>

@@ -4,8 +4,4 @@
         android:id="@+id/customize"
         android:title="Customize" />
 	
-	<item
-		android:id="@+id/update"
-		android:title="Update UI" />
-    
 </menu>

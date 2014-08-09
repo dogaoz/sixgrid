@@ -24,4 +24,11 @@ public class MainActivity extends FragmentActivity
 		mPager.setAdapter(mAdapter);
 		mPager.setCurrentItem(1);
     }
+
+	@Override
+	public void onBackPressed()
+	{
+		// super.onBackPressed();
+		System.out.println("Don't you dare.");
+	}
 }
