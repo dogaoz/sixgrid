@@ -3,7 +3,6 @@ package io.pure.sixgrid.preference;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
@@ -20,8 +19,6 @@ import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 public class CustomizeGrid extends PreferenceActivity
 {
-	SharedPreferences prefs;
-	
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
@@ -62,38 +59,18 @@ public class CustomizeGrid extends PreferenceActivity
 		ListPreference six = (ListPreference)findPreference("pkgnamesix");
 		six.setEntries(appLabels);
 		six.setEntryValues(pkgNames);
+		
+		ListPreference anim = (ListPreference)findPreference("swipeanim");
+		anim.setEntries(new String[] {"Normal", "Fade In", "Fade Out", "Depth", "Depth (No Fade)", "Zoom", "Zoom (No Fade)"});
+		anim.setEntryValues(new String[] {"normal", "fadein", "fadeout", "depth", "nfdepth", "zoom", "nfzoom"});
+		
 	}
 
 	@Override
 	public void onBackPressed()
 	{
-		AlertDialog.Builder builder = new AlertDialog.Builder(this);
-		builder.setTitle("Do you want to apply changes?");
-		builder.setPositiveButton("Apply", new DialogInterface.OnClickListener() {
-			@Override
-			public void onClick(DialogInterface dinterface, int i)
-			{
-				prefs = getSharedPreferences("io.pure.sixgrid", MODE_PRIVATE);
-				prefs.edit().putBoolean("applied", true).commit();
-				prefs.edit().putBoolean("discarded", false).commit();
-				Intent main = new Intent(CustomizeGrid.this, MainActivity.class);
-				startActivity(main);
-				finish();
-			}
-		});
-		builder.setNegativeButton("Reset", new DialogInterface.OnClickListener() {
-			@Override
-			public void onClick(DialogInterface dinterface, int i)
-			{
-				prefs = getSharedPreferences("io.pure.sixgrid", MODE_PRIVATE);
-				prefs.edit().putBoolean("applied", false).commit();
-				prefs.edit().putBoolean("discarded", true).commit();
-				Intent main = new Intent(CustomizeGrid.this, MainActivity.class);
-				startActivity(main);
-				finish();
-			}
-		});
-		builder.setCancelable(true);
-		builder.create().show();
+		Intent main = new Intent(CustomizeGrid.this, MainActivity.class);
+		main.putExtra("var",true);
+		startActivity(main);
 	}
 }

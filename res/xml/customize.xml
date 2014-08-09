@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
 
+	<PreferenceCategory android:title="Swipe Animations" >
+		
+		<ListPreference
+			android:key="swipeanim"
+			android:title="Animation"
+			android:summary="Set the View Swipe Animation." />
+		
+	</PreferenceCategory>
+	
     <PreferenceCategory android:title="Grid One" >
 		
         <EditTextPreference

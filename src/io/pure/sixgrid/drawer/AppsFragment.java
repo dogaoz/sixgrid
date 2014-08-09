@@ -12,6 +12,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.GridView;
 
 import io.pure.sixgrid.R;
@@ -39,6 +41,11 @@ public class AppsFragment extends Fragment {
 		drawerGrid = (GridView)rootView.findViewById(R.id.appsgrid);
 		pm = getActivity().getPackageManager();
 		set_pacs();
+		
+		Animation anim = AnimationUtils.loadAnimation(getActivity(), R.anim.grid);
+		drawerGrid.setAnimation(anim);
+		drawerGrid.animate();
+		
 		drawerAdapterObject = new DrawerAdapter(getActivity(), pacs);
 		drawerGrid.setAdapter(drawerAdapterObject);
 		drawerGrid.setOnItemClickListener(new DrawerClickListener(getActivity(), pacs, pm));
@@ -48,6 +55,7 @@ public class AppsFragment extends Fragment {
 		filter.addAction(Intent.ACTION_PACKAGE_CHANGED);
 		filter.addDataScheme("package");
 		getActivity().registerReceiver(new PacReceiver(), filter);
+		
 		return rootView;
 	}
 
