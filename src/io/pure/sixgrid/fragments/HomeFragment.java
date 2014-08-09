@@ -44,6 +44,7 @@ public class HomeFragment extends Fragment
 	Button mSix;
 	ViewGroup.LayoutParams mSixParams;
 	SharedPreferences mPrefs;
+	SharedPreferences mPrivate;
 	
 	public HomeFragment()
 	{}
@@ -62,7 +63,7 @@ public class HomeFragment extends Fragment
 		int dispwidth = size.x;
 		int dispheight = size.y;
 		
-		mPrefs = getActivity().getSharedPreferences("io.pure.sixgrid", getActivity().MODE_PRIVATE);
+		mPrivate = getActivity().getSharedPreferences("io.pure.sixgrid", getActivity().MODE_PRIVATE);
 		
 		mOne = (Button)rootView.findViewById(R.id.one);
 		mOneParams = mOne.getLayoutParams();
@@ -94,7 +95,7 @@ public class HomeFragment extends Fragment
 		mSixParams.width = dispwidth / 2;
 		mSixParams.height = dispheight / 3 - 8;
 		
-		if (mPrefs.getBoolean("applied", true) == false) {
+		if (mPrivate.getBoolean("applied", true) == false && mPrivate.getBoolean("discarded", false) == true) {
 			mOne.setOnClickListener(new View.OnClickListener() {
 					@Override
 					public void onClick(View v)
@@ -152,9 +153,7 @@ public class HomeFragment extends Fragment
 			}
 		});
 		} else {
-			if (mPrefs.getBoolean("discarded", false) == false) {
-			 	updateGrids();
-			}
+			 updateGrids();
 		}
 		
 		return rootView;
