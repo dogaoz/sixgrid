@@ -32,6 +32,7 @@ public class MainActivity extends FragmentActivity
 		mPager = (ViewPager)findViewById(R.id.pager);
 		
 		mPager.setAdapter(mAdapter);
+		mPager.setCurrentItem(1, true);
 		
 		mPrefs = PreferenceManager.getDefaultSharedPreferences(this);
 	

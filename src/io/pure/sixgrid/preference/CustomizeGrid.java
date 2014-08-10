@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.ListPreference;
+import android.widget.Toast;
 
 import io.pure.sixgrid.MainActivity;
 import io.pure.sixgrid.R;
@@ -22,6 +23,12 @@ public class CustomizeGrid extends PreferenceActivity
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
+		if (!getIntent().getBooleanExtra("reset", false)) {
+			Intent leave = new Intent(this, MainActivity.class);
+			leave.putExtra("var", true);
+			startActivity(leave);
+		}
+		
 		super.onCreate(savedInstanceState);
 		addPreferencesFromResource(R.xml.customize);
 		
@@ -59,18 +66,15 @@ public class CustomizeGrid extends PreferenceActivity
 		ListPreference six = (ListPreference)findPreference("pkgnamesix");
 		six.setEntries(appLabels);
 		six.setEntryValues(pkgNames);
-		
-		ListPreference anim = (ListPreference)findPreference("swipeanim");
-		anim.setEntries(new String[] {"Normal", "Fade In", "Fade Out", "Depth", "Depth (No Fade)", "Zoom", "Zoom (No Fade)"});
-		anim.setEntryValues(new String[] {"normal", "fadein", "fadeout", "depth", "nfdepth", "zoom", "nfzoom"});
-		
 	}
 
 	@Override
 	public void onBackPressed()
 	{
-		Intent main = new Intent(CustomizeGrid.this, MainActivity.class);
+		Intent main = new Intent(CustomizeGrid.this, SimplePreference.class);
 		main.putExtra("var",true);
 		startActivity(main);
+		finish();
+		Toast.makeText(getApplicationContext(), "Make sure that all values are filled and none are empty or else you may encounter graphical glitches with grids.", Toast.LENGTH_LONG).show();
 	}
 }

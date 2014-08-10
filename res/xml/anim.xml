@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+	<PreferenceCategory android:title="Swipe Animations" >
+
+		<ListPreference
+			android:key="swipeanim"
+			android:title="Swipe Animation"
+			android:summary="Set the View Swipe Animation." />
+
+	</PreferenceCategory>
+	
+	<PreferenceCategory android:title="App Animations" >
+		
+		<CheckBoxPreference
+			android:key="appanim"
+			android:title="Enable/Disable App Animations"
+			android:summary="Disable for performance. Enable for eye candy." />
+		
+	</PreferenceCategory>
+
+</PreferenceScreen>

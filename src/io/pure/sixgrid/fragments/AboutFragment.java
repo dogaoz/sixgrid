@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import io.pure.sixgrid.License;
 import io.pure.sixgrid.R;
-import io.pure.sixgrid.preference.CustomizeGrid;
+import io.pure.sixgrid.preference.SimplePreference;
 
 public class AboutFragment extends Fragment
 {
@@ -41,7 +41,7 @@ public class AboutFragment extends Fragment
 			@Override
 			public void onClick(View v)
 			{
-				Intent i = new Intent(getActivity(), CustomizeGrid.class);
+				Intent i = new Intent(getActivity(), SimplePreference.class);
 				startActivity(i);
 				getActivity().finish();
 			}

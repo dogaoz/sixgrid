@@ -4,10 +4,12 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -42,9 +44,13 @@ public class AppsFragment extends Fragment {
 		pm = getActivity().getPackageManager();
 		set_pacs();
 		
-		Animation anim = AnimationUtils.loadAnimation(getActivity(), R.anim.grid);
-		drawerGrid.setAnimation(anim);
-		drawerGrid.animate();
+		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
+		
+		if (prefs.getBoolean("appanim", true) == true) {
+			Animation anim = AnimationUtils.loadAnimation(getActivity(), R.anim.grid);
+			drawerGrid.setAnimation(anim);
+			drawerGrid.animate();
+		}
 		
 		drawerAdapterObject = new DrawerAdapter(getActivity(), pacs);
 		drawerGrid.setAdapter(drawerAdapterObject);

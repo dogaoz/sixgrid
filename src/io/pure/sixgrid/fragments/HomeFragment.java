@@ -25,7 +25,7 @@ import android.widget.Button;
 
 import io.pure.sixgrid.R;
 import io.pure.sixgrid.drawer.AppsFragment;
-import io.pure.sixgrid.preference.CustomizeGrid;
+import io.pure.sixgrid.preference.SimplePreference;
 
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
@@ -167,7 +167,7 @@ public class HomeFragment extends Fragment
 	{
 		switch (item.getItemId()) {
 			case R.id.customize:
-				Intent c = new Intent(getActivity(), CustomizeGrid.class);
+				Intent c = new Intent(getActivity(), SimplePreference.class);
 				startActivity(c);
 				getActivity().finish();
 				break;
