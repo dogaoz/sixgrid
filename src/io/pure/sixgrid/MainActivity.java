@@ -77,9 +77,38 @@ public class MainActivity extends FragmentActivity
 	}
 	
 	@Override
+	protected void onResume() {
+		super.onResume();
+		try
+		{
+		IntentFilter filter = new IntentFilter();
+		filter.addAction(Intent.ACTION_PACKAGE_ADDED);
+		filter.addAction(Intent.ACTION_PACKAGE_REMOVED);
+		filter.addAction(Intent.ACTION_PACKAGE_CHANGED);
+		filter.addDataScheme("package");
+	registerReceiver(new io.pure.sixgrid.drawer.AppsFragment.PacReceiver(),filter);
+		}
+		catch(Exception e)
+		{
+			
+		}
+
+	}
+	@Override
 	protected void onPause() {
 		super.onPause();
-	unregisterReceiver(new PacReceiver(), filter);
-
+		try
+		{
+		IntentFilter filter = new IntentFilter();
+		filter.addAction(Intent.ACTION_PACKAGE_ADDED);
+		filter.addAction(Intent.ACTION_PACKAGE_REMOVED);
+		filter.addAction(Intent.ACTION_PACKAGE_CHANGED);
+		filter.addDataScheme("package");
+	unregisterReceiver(new io.pure.sixgrid.drawer.AppsFragment.PacReceiver());
+		}
+		catch(Exception e)
+		{
+			
+		}
 	}
 }
