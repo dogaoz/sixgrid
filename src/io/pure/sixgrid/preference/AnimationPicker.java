@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.preference.PreferenceActivity;
 import android.preference.ListPreference;
 
+import io.pure.sixgrid.MainActivity;
 import io.pure.sixgrid.R;
 
 public class AnimationPicker extends PreferenceActivity
@@ -23,9 +24,10 @@ public class AnimationPicker extends PreferenceActivity
 	@Override
 	public void onBackPressed()
 	{
-		Intent main = new Intent(AnimationPicker.this, SimplePreference.class);
-		main.putExtra("var",true);
+		Intent main = new Intent(AnimationPicker.this, MainActivity.class);
+		main.putExtra("var", true);
 		startActivity(main);
+		overridePendingTransition(R.anim.slide_up_bottom, R.anim.slide_down_bottom);
 		finish();
 	}
 }

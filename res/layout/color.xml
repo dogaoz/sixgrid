@@ -1,0 +1,17 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+	
+	<GridView
+		android:id="@+id/colorshow"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent" 
+		android:columnWidth="90dp"
+		android:numColumns="2"
+		android:verticalSpacing="10dp"
+		android:horizontalSpacing="40dp"
+		android:stretchMode="columnWidth" 
+		android:gravity="center"
+		android:background="#666677"/>
+    
+</LinearLayout>

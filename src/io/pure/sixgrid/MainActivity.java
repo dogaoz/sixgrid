@@ -1,6 +1,7 @@
 package io.pure.sixgrid;
 
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.app.FragmentActivity;
@@ -27,6 +28,8 @@ public class MainActivity extends FragmentActivity
 	{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+		
+		getWindow().getDecorView().setBackgroundColor(Color.parseColor("#666666"));
 		
 		mAdapter = new SixPagerAdapter(getSupportFragmentManager());
 		mPager = (ViewPager)findViewById(R.id.pager);

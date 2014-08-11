@@ -16,19 +16,11 @@ import io.pure.sixgrid.R;
 
 import java.util.List;
 
-import net.margaritov.preference.colorpicker.ColorPickerPreference;
-
 public class CustomizeGrid extends PreferenceActivity
 {
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
-		if (!getIntent().getBooleanExtra("reset", false)) {
-			Intent leave = new Intent(this, MainActivity.class);
-			leave.putExtra("var", true);
-			startActivity(leave);
-		}
-		
 		super.onCreate(savedInstanceState);
 		addPreferencesFromResource(R.xml.customize);
 		
@@ -71,9 +63,10 @@ public class CustomizeGrid extends PreferenceActivity
 	@Override
 	public void onBackPressed()
 	{
-		Intent main = new Intent(CustomizeGrid.this, SimplePreference.class);
-		main.putExtra("var",true);
+		Intent main = new Intent(CustomizeGrid.this, MainActivity.class);
+		main.putExtra("var", true);
 		startActivity(main);
+		overridePendingTransition(R.anim.slide_up_bottom, R.anim.slide_down_bottom);
 		finish();
 		Toast.makeText(getApplicationContext(), "Make sure that all values are filled and none are empty or else you may encounter graphical glitches with grids.", Toast.LENGTH_LONG).show();
 	}

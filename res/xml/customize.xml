@@ -13,16 +13,6 @@
 			android:title="Package To Launch"
 			android:summary="Select the application to launch." />
 		
-		<net.margaritov.preference.colorpicker.ColorPickerPreference
-			android:key="colorone"
-			android:title="Background Color"
-			android:summary="Set the background colour of Grid." />
-		
-		<net.margaritov.preference.colorpicker.ColorPickerPreference
-			android:key="textcolorone"
-			android:title="Text Color"
-			android:summary="Set the text colour of Grid." />
-		
     </PreferenceCategory>
 	
 	<PreferenceCategory android:title="Grid Two" >
@@ -36,16 +26,6 @@
 			android:key="pkgnametwo"
 			android:title="Package To Launch"
 			android:summary="Select the application to launch." />
-
-		<net.margaritov.preference.colorpicker.ColorPickerPreference
-			android:key="colortwo"
-			android:title="Background Color"
-			android:summary="Set the background colour of Grid." />
-
-		<net.margaritov.preference.colorpicker.ColorPickerPreference
-			android:key="textcolortwo"
-			android:title="Text Color"
-			android:summary="Set the text colour of Grid." />
 
     </PreferenceCategory>
 	
@@ -61,16 +41,6 @@
 			android:title="Package To Launch"
 			android:summary="Select the application to launch." />
 
-		<net.margaritov.preference.colorpicker.ColorPickerPreference
-			android:key="colorthree"
-			android:title="Background Color"
-			android:summary="Set the background colour of Grid." />
-
-		<net.margaritov.preference.colorpicker.ColorPickerPreference
-			android:key="textcolorthree"
-			android:title="Text Color"
-			android:summary="Set the text colour of Grid." />
-
     </PreferenceCategory>
 	
 	<PreferenceCategory android:title="Grid Four" >
@@ -84,16 +54,6 @@
 			android:key="pkgnamefour"
 			android:title="Package To Launch"
 			android:summary="Select the application to launch." />
-
-		<net.margaritov.preference.colorpicker.ColorPickerPreference
-			android:key="colorfour"
-			android:title="Background Color"
-			android:summary="Set the background colour of Grid." />
-
-		<net.margaritov.preference.colorpicker.ColorPickerPreference
-			android:key="textcolorfour"
-			android:title="Text Color"
-			android:summary="Set the text colour of Grid." />
 
     </PreferenceCategory>
 	
@@ -109,16 +69,6 @@
 			android:title="Package To Launch"
 			android:summary="Select the application to launch." />
 
-		<net.margaritov.preference.colorpicker.ColorPickerPreference
-			android:key="colorfive"
-			android:title="Background Color"
-			android:summary="Set the background colour of Grid." />
-
-		<net.margaritov.preference.colorpicker.ColorPickerPreference
-			android:key="textcolorfive"
-			android:title="Text Color"
-			android:summary="Set the text colour of Grid." />
-
     </PreferenceCategory>
 	
 	<PreferenceCategory android:title="Grid Six" >
@@ -132,16 +82,6 @@
 			android:key="pkgnamesix"
 			android:title="Package To Launch"
 			android:summary="Select the application to launch." />
-
-		<net.margaritov.preference.colorpicker.ColorPickerPreference
-			android:key="colorsix"
-			android:title="Background Color"
-			android:summary="Set the background colour of Grid." />
-
-		<net.margaritov.preference.colorpicker.ColorPickerPreference
-			android:key="textcolorsix"
-			android:title="Text Color"
-			android:summary="Set the text colour of Grid." />
 
     </PreferenceCategory>
 	

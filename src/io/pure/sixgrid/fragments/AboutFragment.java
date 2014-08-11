@@ -33,6 +33,7 @@ public class AboutFragment extends Fragment
 			{
 				Intent i = new Intent(getActivity(), License.class);
 				startActivity(i);
+				getActivity().overridePendingTransition(R.anim.slide_up_bottom, R.anim.slide_down_bottom);
 			}
 		});
 		
@@ -43,6 +44,7 @@ public class AboutFragment extends Fragment
 			{
 				Intent i = new Intent(getActivity(), SimplePreference.class);
 				startActivity(i);
+				getActivity().overridePendingTransition(R.anim.slide_up_bottom, R.anim.slide_down_bottom);
 				getActivity().finish();
 			}
 		});

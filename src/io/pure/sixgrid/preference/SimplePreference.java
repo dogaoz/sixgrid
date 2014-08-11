@@ -20,8 +20,9 @@ public class SimplePreference extends ListActivity implements AdapterView.OnItem
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.simple);
 		
-		setListAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, new String[] {"Animation", "Grids", "Reset UI"}));
+		setListAdapter(new ArrayAdapter<String>(this, R.layout.simple_item, new String[] {"Animation", "Grids", "Colors", "Reset UI"}));
 		getListView().setOnItemClickListener(this);
+		getListView().setDividerHeight(0);
 	}
 
 	@Override
@@ -32,16 +33,26 @@ public class SimplePreference extends ListActivity implements AdapterView.OnItem
 			case 0:
 				Intent anim = new Intent(this, AnimationPicker.class);
 				startActivity(anim);
+				overridePendingTransition(R.anim.slide_up_bottom, R.anim.slide_down_bottom);
 				finish();
 				break;
 			case 1:
 				Intent grid = new Intent(this, CustomizeGrid.class);
+				grid.putExtra("reset", false);
 				startActivity(grid);
+				overridePendingTransition(R.anim.slide_up_bottom, R.anim.slide_down_bottom);
 				finish();
 				break;
 			case 2:
+				Intent colors = new Intent(this, ColorProfiles.class);
+				startActivity(colors);
+				overridePendingTransition(R.anim.slide_up_bottom, R.anim.slide_down_bottom);
+				finish();
+				break;
+			case 3:
 				Intent main = new Intent(this, MainActivity.class);
 				startActivity(main);
+				overridePendingTransition(R.anim.slide_up_bottom, R.anim.slide_down_bottom);
 				finish();
 				break;
 		}
@@ -50,10 +61,10 @@ public class SimplePreference extends ListActivity implements AdapterView.OnItem
 	@Override
 	public void onBackPressed()
 	{
-		Intent main = new Intent(this, CustomizeGrid.class);
-		main.putExtras(getIntent().getExtras());
-		main.putExtra("reset", false);
+		Intent main = new Intent(this, MainActivity.class);
+		main.putExtra("var", true);
 		startActivity(main);
+		overridePendingTransition(R.anim.slide_up_bottom, R.anim.slide_down_bottom);
 		finish();
 	}
 }

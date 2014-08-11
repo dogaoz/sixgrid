@@ -1,0 +1,21 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="180px"
+    android:layout_height="200px"
+	android:padding="15dp">
+	
+	<ImageView
+		android:id="@+id/color_image"
+		android:layout_width="180px"
+		android:layout_height="180px" />
+	
+	<TextView
+		android:id="@+id/color_text"
+		android:layout_width="180px"
+		android:layout_height="wrap_content"
+		android:layout_below="@+id/color_image"
+		android:layout_marginTop="8dp"
+		android:gravity="center"
+		android:textAppearance="?android:attr/textAppearanceMedium"
+		android:textColor="#ffffff" />
+    
+</RelativeLayout>
