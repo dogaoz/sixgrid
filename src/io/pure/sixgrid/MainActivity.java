@@ -75,4 +75,11 @@ public class MainActivity extends FragmentActivity
 		// super.onBackPressed();
 		System.out.println("Don't you dare.");
 	}
+	
+	@Override
+	protected void onPause() {
+		super.onPause();
+	unregisterReceiver(new PacReceiver(), filter);
+
+	}
 }
