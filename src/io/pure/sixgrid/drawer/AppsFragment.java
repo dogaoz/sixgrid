@@ -25,13 +25,13 @@ import java.util.List;
 public class AppsFragment extends Fragment {
 	DrawerAdapter drawerAdapterObject;
 	GridView drawerGrid;
-	class Pac{
+	static class Pac{
 		Drawable icon;
 		String name;
 		String label;
 	}
-	Pac[] pacs;
-	PackageManager pm;
+	static Pac[] pacs;
+	static PackageManager pm;
 	
 	public AppsFragment()
 	{}
@@ -65,7 +65,7 @@ public class AppsFragment extends Fragment {
 		return rootView;
 	}
 
-	public void set_pacs(){
+	public static void set_pacs(){
 		final Intent mainIntent = new Intent(Intent.ACTION_MAIN,null);
 		mainIntent.addCategory(Intent.CATEGORY_LAUNCHER);
 		List<ResolveInfo> pacsList = pm.queryIntentActivities(mainIntent, 0);
@@ -80,7 +80,7 @@ public class AppsFragment extends Fragment {
 		new SortApps().exchange_sort(pacs);
 	}
 	
-	public class PacReceiver extends BroadcastReceiver{
+	public static class PacReceiver extends BroadcastReceiver{
 
 		@Override
 		public void onReceive(Context context, Intent intent) {
